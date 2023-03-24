@@ -119,17 +119,9 @@ void Azerothcore_skip_deathknight_HandleSkip(Player* player)
     //Don't need to save all players, just current
     player->SaveToDB(false, false);
 
-    WorldLocation Aloc = WorldLocation(0, -8866.55f, 671.39f, 97.90f, 5.27f);// Stormwind
-    WorldLocation Hloc = WorldLocation(1, 1637.62f, -4440.22f, 15.78f, 2.42f);// Orgrimmar
-
-    if (player->GetTeamId() == TEAM_ALLIANCE)
-    {
-        player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
-    }
-    else
-    {
-        player->TeleportTo(1, 1569.59f, -4397.63f, 7.70f, 0.54f);//Orgrimmar
-    }
+    WorldLocation loc = WorldLocation(571, 5810.6f, 441.16f, 658.8f, 1.16f); // Dalaran
+    player->TeleportTo(571, 5810.6f, 441.16f, 658.8f, 1.16f); // Dalaran
+    player->SetHomebind(loc, 4564);
 }
 
 class AzerothCore_skip_deathknight_announce : public PlayerScript
